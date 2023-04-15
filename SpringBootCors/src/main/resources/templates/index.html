@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot Tutorial</title>
+<script>
+	async function load() {
+		console.log("Function Load")
+		let response = await fetch("http://localhost:8080/cors");
+		let text = await response.text();
+		document.getElementById("text").innerHTML = text;
+		console.log(text)
+	}
+	
+	document.addEventListener("DOMContentLoaded", load);
+</script>
+</head>
+<body>
+<h1>Spring Boot Tutorial</h1>
+<p id="text"></p>
+</body>
+</html>
