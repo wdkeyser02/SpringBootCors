@@ -15,6 +15,12 @@
 		let corstext = await corsresponse.text();
 		document.getElementById("corsdata").innerHTML = corstext;
 		console.log(corstext);
+			
+		let corssecurityresponse = await fetch('http://localhost:9999/cors', {
+				headers: {'Authorization': 'Basic ' + btoa('user' + ':' + 'password')}});
+		let corssecuritytext = await corssecurityresponse.text();
+		document.getElementById("corssecuritydata").innerHTML = corssecuritytext;
+		console.log(corssecuritytext);
 		
 	}
 	
@@ -26,5 +32,7 @@
 <p id="text"></p>
 <p> </p>
 <p id="corsdata"></p>
+<p> </p>
+<p id="corssecuritydata"></p>
 </body>
 </html>
