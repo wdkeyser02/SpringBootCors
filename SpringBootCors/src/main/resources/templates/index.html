@@ -6,12 +6,12 @@
 <script>
 	async function load() {
 		console.log("Function Load")
-		let response = await fetch("http://127.0.0.1:8080/cors");
+		let response = await fetch("http://localhost:8080/cors");
 		let text = await response.text();
 		document.getElementById("text").innerHTML = text;
 		console.log(text);
 		
-		let corsresponse = await fetch("http://127.0.0.1:9000/cors");
+		let corsresponse = await fetch("http://localhost:9000/cors");
 		let corstext = await corsresponse.text();
 		document.getElementById("corsdata").innerHTML = corstext;
 		console.log(corstext);
